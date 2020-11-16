@@ -1,0 +1,8 @@
+Le dossier contient les fichiers suivants:
+-maree.py		il s'agit du fichier principal que l'on va utiliser dans tous nos calculs
+-launcheur_maree.py	il permet de tester le programme principal
+-test_maree.py		il permet de faire plusieurs test directement sur le fichier maree et d'afficher leurs résultats (pour cela il faut l'executer)
+-launcheur_Minute	il permet de tester la fonction Minute présente dans le fichier meree.py
+-test_minute		il permet de faire plusieurs test directement sur la fonction Minute et d'afficher leurs résultats (pour cela il faut l'executer)
+
+les autres fonctions ne sont pas testées car leurs résultats ne sont pas intéressants
