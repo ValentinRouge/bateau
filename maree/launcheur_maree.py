@@ -1,5 +1,5 @@
 from maree import *
-
+#test
 
 def HourToTupples(Hour):
     """
@@ -31,7 +31,7 @@ def HourToTupples(Hour):
         //                                                                                      //
         //----------------- FIN EN TETE --------------------------------------------------------//"""
     h, m = Hour.split(":")
-    return int(h), int(m)
+    return int(h), int(m), 1
 
 
 while True:  # boucle pour le menu
