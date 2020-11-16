@@ -24,7 +24,7 @@ def Droite(Xpoint,Ypoint,angle):
     // LOCALES :                                                            //
     //                                                                      //
     // FONCTIONS APPELEES :                                                 //
-    //                         jjj                                             //
+    //                                                                      //
     // ALGO - REFERENCES :                                                  //
     //                                                                      //
     // ---------------- FIN EN TETE ----------------------------------------//
