@@ -31,7 +31,7 @@ def HourToTupples(Hour):
         //                                                                                      //
         //----------------- FIN EN TETE --------------------------------------------------------//"""
     h, m = Hour.split(":")
-    return int(h), int(m), 1
+    return int(h), int(m)
 
 
 while True:  # boucle pour le menu
