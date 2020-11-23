@@ -17,4 +17,3 @@ A2 = input("angle de vision du second phare : ")
 L2 = input("latitude du second phare : ")
 l2 = input("longitude du second phare : ")
 
-L1 = 
