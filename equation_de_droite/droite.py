@@ -40,7 +40,7 @@ def Droite(Xpoint,Ypoint,angle):
 
     elif angle == 90 or angle == 270:
         a = 0 
-        y = 1
+        b = 1
         c = - Ypoint
         
     elif angle > 0 and angle < 90:
