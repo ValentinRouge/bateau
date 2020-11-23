@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Tue Sep 15 14:13:50 2020
 
@@ -201,7 +200,7 @@ def CVtoCC (cv,d,a,D,b) :
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE -----------------------------------------------------//"""
-def CVtoRS (cv,a) : 
+def CVtoRS(cv,a) : 
     rs = a+cv
     result = reajustement(rs)
     return (result)
@@ -291,7 +290,7 @@ cc = cap_compas()
     // ALGO - REFERENCES :                                                                  //
     //                                                                                      //
     //----------------- FIN EN TETE --------------------------------------------------------//"""
-def choix () : 
+def choix() : 
     print ("que voulez vous faire ?")
     a = int(input ("1- Cap compas => Cap vrai 2- Cap Vrai => cap compas 3- Route de surface => cap Vrai"))
     if a == 1 : 
