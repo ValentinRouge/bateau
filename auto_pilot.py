@@ -4,7 +4,6 @@ from maree.maree import *
 from convertisseur_de_coordonnees.coordonnee import *
 from cascade_resultat.cascade_resultats import *
 
-print("a", Droite(1,2,90))
 LCmin = input("latitude minimale de la carte : ")
 LCmax = input("latitude maximale de la carte : ")
 lCmin = input("longitude minimale de la carte : ")
