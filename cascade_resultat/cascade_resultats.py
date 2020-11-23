@@ -332,8 +332,4 @@ def choix () :
             b = orientation ()
             cc = CVtoCC (cv,d,a,D,b)
             affichage_cc(cc)
-            
-
-    
-choix()
 
