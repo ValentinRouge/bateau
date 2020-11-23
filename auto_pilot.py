@@ -4,13 +4,35 @@ from maree.maree import *
 from convertisseur_de_coordonnees.coordonnee import *
 from cascade_resultat.cascade_resultats import *
 
-# a entrer a partir du moment où il y a des données en lat / long qui sont rentrée
-LCmin = input("latitude minimale de la carte : ")
-LCmax = input("latitude maximale de la carte : ")
-lCmin = input("longitude minimale de la carte : ")
-lCmax = input("longitude maximale de la carte : ")
+while True:
+    print("""
+1\Calcul de position
+2\Calcul de cap
+3\Calcul de maree
+0\Quitter
+""")
+    answ = input("Que souhaitez vous faire?\n:")
+    try:
+        answ = int(answ)
+    except ValueError:
+        print("impossible de rentrer autre chose que des chiffres (O, 1, 2 ,3)  en fonction de ce que l'on souhaite réaliser")
 
-# a rentrer pour se localiser sur la carte (droite + intersection)
+    if answ == 0:
+        break
+    elif answ == 1:
+        # a entrer a partir du moment où il y a des données en lat / long qui sont rentrée
+        try :
+            LCmin==0
+        except : 
+            LCmin = input("latitude minimale de la carte : ")
+            LCmax = input("latitude maximale de la carte : ")
+            lCmin = input("longitude minimale de la carte : ")
+            lCmax = input("longitude maximale de la carte : ")
+
+        try : 
+            A1==0
+        except :
+        # a rentrer pour se localiser sur la carte (droite + intersection)
 A1 = input("angle de vision du premier phare : ")
 L1 = input("latitude du premier phare : ")
 l1 = input("longitude du premier phare : ")
@@ -18,6 +40,17 @@ l1 = input("longitude du premier phare : ")
 A2 = input("angle de vision du second phare : ")
 L2 = input("latitude du second phare : ")
 l2 = input("longitude du second phare : ")
+    elif answ == 2:
+        try :
+            LCmin==0
+        except : 
+            LCmin = input("latitude minimale de la carte : ")
+            LCmax = input("latitude maximale de la carte : ")
+            lCmin = input("longitude minimale de la carte : ")
+            lCmax = input("longitude maximale de la carte : ")
+    elif answ == 3:
+        print("Calcul de maree")
+
 
 # programme qui nous localise sur une carte : 
 X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
