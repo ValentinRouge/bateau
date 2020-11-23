@@ -1,6 +1,3 @@
-from numpy import *
-from math import *
-
 from intersection_2_droites.intersection2droites import *
 from equation_de_droite.droite import *
 from maree.maree import *
