@@ -12,10 +12,11 @@ while True:
 0\Quitter
 """)
     answ = input("Que souhaitez vous faire?\n:")
+    print("\n")
     try:
         answ = int(answ)
     except ValueError:
-        print("impossible de rentrer autre chose que des chiffres (O, 1, 2 ,3)  en fonction de ce que l'on souhaite réaliser")
+        print("impossible de rentrer autre chose que des chiffres (O, 1, 2 ,3)\nOn doit rentrer un chiffre en fonction de ce que l'on souhaite réaliser")
 
     if answ == 0:
         break

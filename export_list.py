@@ -1,3 +1,7 @@
+"""
+Permet de récupérer la liste avec tous les phares de France et leur position exacte
+"""
+
 from json import *
 
 with open('phare_de_France.json') as json_data:
