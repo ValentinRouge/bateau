@@ -10,5 +10,8 @@ for i in range(len(data_dict['features'])):
             phares[data_dict['features'][i]['properties']['name'].replace('Ã©', 'e').replace('Ã¼', 'u').replace('Ã«', 'e').replace('ÃŽ', 'I').replace('Ãª', 'e').replace('Ã‰', 'E').replace('Ã´', 'o').replace('Ã®', 'I').replace('Ã¨', 'e').replace('Ã ', 'a').replace('Ã¢', 'a').lower()] = (data_dict['features'][i]['geometry']['coordinates'][0], data_dict['features'][i]['geometry']['coordinates'][1])
 
 # si on veut afficher le dict
-"""for i in range(len(list(phares.keys()))):
-    print(list(phares.keys())[i], phares[list(phares.keys())[i]])"""
+#for i in range(len(list(phares.keys()))):
+#    print(list(phares.keys())[i], phares[list(phares.keys())[i]])
+
+with open('phare_de_France_dict.json', 'w') as json_data:
+    json_data.write(dumps(phares))
