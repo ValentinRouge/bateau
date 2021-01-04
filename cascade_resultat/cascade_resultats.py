@@ -6,43 +6,6 @@ Created on Tue Sep 15 14:13:50 2020
 """
 
 
-def cap_compas(): 
-    cc = int(input("Quel est le cap compas (en deg) ? "))
-    return cc
-
-def cap_vrai(): 
-    cv = int(input("Quel est le cap vrai (deg) ? "))
-    return cv
-
-def deviation():
-    d = int(input("Quel est la déviation ( en deg) ? "))
-    return d
-   
-def orientation(): 
-    a = int(input ("1 - Est 2 - West "))
-    return a
-
-def declinaison(): 
-    D = int(input("Quel est la déclinaison (en deg) ? "))
-    return D
-
-def derive():
-    der = int(input("Quelle est la valeur de la dérive (en deg)? "))
-    return der
-
-def route_surface(): 
-    RS = int(input("quelles est la valeur de la route de surface (en deg)? "))
-    return RS
-
-def affichage_cv(a): 
-    print("le cap vrai est ", a," degrès")
-
-def affichage_cc(a):
-    print("le cap compas est ", a," degrès")
-    
-def affichage_rs(a):
-    print("la route de surface est",a,"degrès")
-
 """
     // ---------------- DEBUT EN TETE ---------------------------------------------------//
     // NOM :                    reajustement                                             //
@@ -294,41 +257,36 @@ def choix() :
     print("que voulez vous faire ?")
     a = int(input("1- Cap compas => Cap vrai 2- Cap Vrai => cap compas 3- Route de surface => cap Vrai"))
     if a == 1 : 
-        cc = cap_compas()
-        d = deviation()
-        a = orientation()
-        D = declinaison()
-        b = orientation()
-        cv1 = CCtoCV(cc,d,a,D,b)
-        affichage_cv(cv1)
-        print ("voulez vous calculer la route de Surface")
+        cc = int(input("Quel est le cap compas (en deg) ? "))
+        d = int(input("Quel est la déviation ( en deg) ? "))
+        a = int(input ("1 - Est 2 - West "))
+        D = int(input("Quel est la déclinaison (en deg) ? "))
+        b = int(input ("1 - Est 2 - West "))
+        print("le cap vrai est", CCtoCV(cc,d,a,D,b),"degrès")
+        print("voulez vous calculer la route de Surface")
         b = int(input("1- oui 2- non"))
         if b == 1 : 
             cv = cv1
-            a = derive()
-            rs = CVtoRS(cv,a)
-            affichage_rs(rs)           
+            a = int(input("Quelle est la valeur de la dérive (en deg)? "))
+            print("la route de surface est", CVtoRS(cv,a),"degrès")          
     elif a == 2 :
-        cv = cap_vrai()
-        d = deviation()
-        a = orientation()
-        D = declinaison()
-        b = orientation()
-        cc = CVtoCC (cv,d,a,D,b)
-        affichage_cc(cc)
+        cv = int(input("Quel est le cap vrai (deg) ? "))
+        d = int(input("Quel est la déviation ( en deg) ? "))
+        a = int(input ("1 - Est 2 - West "))
+        D = int(input("Quel est la déclinaison (en deg) ? "))
+        b = int(input ("1 - Est 2 - West "))
+        print("le cap compas est", cc = CVtoCC (cv,d,a,D,b),"degrès")
     else  :
-        a = route_surface()
-        b= derive()
-        cv2 = RStoCV(a,b)
-        affichage_cv(cv2)
-        print ("voulez vous calculer le cap compas ?")
-        c = int (input ("1-oui 2- non "))
+        a = int(input("quelles est la valeur de la route de surface (en deg)? "))
+        b= int(input("Quelle est la valeur de la dérive (en deg)? "))
+        print("le cap vrai est", RStoCV(a,b),"degrès")
+        print("voulez vous calculer le cap compas ?")
+        c = int(input("1-oui 2- non "))
         if c == 1 :
             cv = cv2
-            d = deviation()
-            a = orientation()
-            D = declinaison()
-            b = orientation()
-            cc = CVtoCC(cv,d,a,D,b)
-            affichage_cc(cc)
+            d = int(input("Quel est la déviation ( en deg) ? "))
+            a = int(input ("1 - Est 2 - West "))
+            D = int(input("Quel est la déclinaison (en deg) ? "))
+            b = int(input ("1 - Est 2 - West "))
+            print("le cap compas est", CVtoCC(cv,d,a,D,b),"degrès")
 
