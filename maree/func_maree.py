@@ -55,44 +55,48 @@ def launch_marre():
     // ALGO - REFERENCES :                                                                  //
     //                                                                                      //
     //----------------- FIN EN TETE --------------------------------------------------------//"""
-    choice = str(input("""
-    Menu:
-    1-Rechercher le niveau de la marée grace à un horaire
-    2-Rechercher l'heure à laquelle la marée atteint un certain niveau
-    :""")).strip()  # on demande à l'utilisateur de rentrer un des choix
-    print("")  # juste pour le saut de ligne
+    while True:
+        choice = str(input("""
+        Menu:
+        1-Rechercher le niveau de la marée grace à un horaire
+        2-Rechercher l'heure à laquelle la marée atteint un certain niveau
+        3-Quitter
+        :""")).strip()  # on demande à l'utilisateur de rentrer un des choix
+        print("")  # juste pour le saut de ligne
 
-    if choice == "1":  # si le choix est 1
-        try:
-            MinHour = HourToTupples(input("Premiére Heure:  "))
-            MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
-            MaxHour = HourToTupples(input("Deuxième heure:  "))
-            MaxLevel = float(input("Niveau correspondant à la deuxième heure:  "))
-            Var = HourToTupples(input("Heure désirée:   "))
-            Solution = maree.TideLevel(MinHour, MaxHour, MinLevel, MaxLevel, Var)
-            print("\nà {}h{} la mer sera à {}m\n\n".format(str(Var[0]).rjust(2, "0"), str(Var[1]).rjust(2, "0"), Solution.__round__(2)))
-        except ValueError:
-            print("""
-            Une des entrées n'est pas correcte:
-            -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
-            -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
-            """)
-    elif choice == "2":  # sinon si le choix et 2
-        try:
-            MinHour = HourToTupples(input("Premiére Heure:  "))
-            MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
-            MaxHour = HourToTupples(input("Deuxième heure:  "))
-            MaxLevel = float(input("Niveau correspondant à la deuxième heure:  "))
-            Var = float(input("Niveau d'on on souhaite connaître l'heure: "))
-            Solution = maree.TideTime(MinHour, MaxHour, MinLevel, MaxLevel, Var)
-            print("la mer atteindra {}m à {}h{}".format(Var, str(Solution[0]).rjust(2, "0"), str(Solution[1]).rjust(2, "0")))
-        except ValueError:
-            print("""
-    Une des entrées n'est pas correcte:
-    -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
-    -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
-    """)
-    else:  # sinon pour toutes les autres réponses (incompréhension de l'utilisateur)
-        print("\nil faut rentrer un nombre en fonction de ce que l'on souhaite réaliser.\n1, 2 ou 3 (pour quitter)\n")
+        if choice == "1":  # si le choix est 1
+            try:
+                MinHour = HourToTupples(input("Premiére Heure:  "))
+                MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
+                MaxHour = HourToTupples(input("Deuxième heure:  "))
+                MaxLevel = float(input("Niveau correspondant à la deuxième heure:  "))
+                Var = HourToTupples(input("Heure désirée:   "))
+                Solution = maree.TideLevel(MinHour, MaxHour, MinLevel, MaxLevel, Var)
+                print("\nà {}h{} la mer sera à {}m\n\n".format(str(Var[0]).rjust(2, "0"), str(Var[1]).rjust(2, "0"), Solution.__round__(2)))
+            except ValueError:
+                print("""
+                Une des entrées n'est pas correcte:
+                -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
+                -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
+                """)
+        elif choice == "2":  # sinon si le choix et 2
+            try:
+                MinHour = HourToTupples(input("Premiére Heure:  "))
+                MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
+                MaxHour = HourToTupples(input("Deuxième heure:  "))
+                MaxLevel = float(input("Niveau correspondant à la deuxième heure:  "))
+                Var = float(input("Niveau d'on on souhaite connaître l'heure: "))
+                Solution = maree.TideTime(MinHour, MaxHour, MinLevel, MaxLevel, Var)
+                print("la mer atteindra {}m à {}h{}".format(Var, str(Solution[0]).rjust(2, "0"), str(Solution[1]).rjust(2, "0")))
+            except ValueError:
+                print("""
+        Une des entrées n'est pas correcte:
+        -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
+        -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
+        """)
+        elif choix==3:
+            break
+        else:  # sinon pour toutes les autres réponses (incompréhension de l'utilisateur)
+            print("\nil faut rentrer un nombre en fonction de ce que l'on souhaite réaliser.\n1, 2 ou 3 (pour quitter)\n")
 
 
