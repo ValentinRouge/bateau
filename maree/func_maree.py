@@ -60,7 +60,7 @@ def launch_marre():
         Menu:
         1-Rechercher le niveau de la marée grace à un horaire
         2-Rechercher l'heure à laquelle la marée atteint un certain niveau
-        3-Quitter
+        3-Revenir au menu principal
         :""")).strip()  # on demande à l'utilisateur de rentrer un des choix
         print("")  # juste pour le saut de ligne
 
