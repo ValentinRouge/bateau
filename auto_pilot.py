@@ -7,7 +7,7 @@ from cascade_resultat.cascade_resultats import *
 from json import *
 from math import sqrt
 
-with open('phare_de_France_dict.json') as json_data:  # on charge la liste des phare de france
+with open('phare_de_france\phare_de_France_dict.json') as json_data:  # on charge la liste des phare de france
     phare_de_france = load(json_data)
 
 while True:
