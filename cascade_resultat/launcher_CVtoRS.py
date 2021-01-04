@@ -1,7 +1,6 @@
 from cascade_resultat import CVtoRS
 
-cv = int(input("donnez la  valuer de cv"))
 
-a = int(input("donnez la  valuer de a"))
-                            
-print(CVtoRS(cv,a))
+cv = int(input("donnez la  valuer du cap vrai : "))
+a = int(input("donnez la  valuer de la valeur de la derive : "))             
+print("\nla route de surface est :", CVtoRS(cv,a))

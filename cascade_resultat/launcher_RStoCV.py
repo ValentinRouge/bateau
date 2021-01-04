@@ -1,7 +1,6 @@
-from cascade_resultat import RS
+from cascade_resultat import RStoCV
 
-a = int(input("donnez la  valuer de a"))
 
-b = int(input("donnez la  valuer de b"))
-                            
-print (RStoCV(a,b))
+a = int(input("donnez la  valuer de la route de surface : "))
+b = int(input("donnez la  valuer de la derive : "))               
+print("\nle cap vrai est :", RStoCV(a,b))
