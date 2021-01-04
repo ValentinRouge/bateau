@@ -28,28 +28,35 @@ while True:
         except : 
             print("-" * 40, sep="")
             print("    Carte:")
-            LCmin = input("\t-latitude minimale : ")   # Pour l'émisphére Nord seulement
+            LCmin = input("\t-latitude minimale : ")   # Pour l'émisphére Nord seulement et sans prendre en compte le passage de l'antiméridien
             LCmax = input("\t-latitude maximale : ")
             lCmin = input("\n\t-longitude minimale : ")
             lCmax = input("\t-longitude maximale : ")
             print("-" * 40, sep="")
 
         print("")
+        print("Phare 1")
+        choice = input(":")
+        if 0 < choic < 10:
+            pass
+        elif choice == 0:
+            break
         # a rentrer pour se localiser sur la carte (droite + intersection)
-        print("-" * 40, sep="")
-        print("    Phare 1:")
-        A1 = input("\t-angle de vision (°): ")
-        L1 = input("\n\t-latitude : ")
-        l1 = input("\t-longitude : ")
-        print("-" * 40, sep="")
+        else:
+            print("-" * 40, sep="")
+            print("    Phare 1:")
+            A1 = input("\t-angle de vision (°): ")
+            L1 = input("\n\t-latitude : ")
+            l1 = input("\t-longitude : ")
+            print("-" * 40, sep="")
 
-        print("")
-        print("-" * 40, sep="")
-        print("    Phare 2:")
-        A2 = input("\t-angle de vision (°): ")
-        L2 = input("\n\t-latitude : ")
-        l2 = input("\t-longitude : ")
-        print("-" * 40, sep="")
+            print("")
+            print("-" * 40, sep="")
+            print("    Phare 2:")
+            A2 = input("\t-angle de vision (°): ")
+            L2 = input("\n\t-latitude : ")
+            l2 = input("\t-longitude : ")
+            print("-" * 40, sep="")
 
 
         X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
