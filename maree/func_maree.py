@@ -1,5 +1,4 @@
 from maree import *
-#test
 
 def HourToTupples(Hour):
     """
@@ -33,13 +32,34 @@ def HourToTupples(Hour):
     h, m = Hour.split(":")
     return int(h), int(m)
 
-
-while True:  # boucle pour le menu
+def lauch_marre():
+    """
+    // ---------------- DEBUT EN TETE ------------------------------------------------------//
+    // NOM :                    HourToTupples                                               //
+    //                                                                                      //
+    // AUTEURS : JB Moufle & V Rouge                                                        //
+    //                                                                                      //
+    // VERSION :    1.0                                 04/01/2021                          //
+    //     lance le programme marée                                                         //
+    // HISTORIQUE : Aucun                                                                   //
+    //                                                                                      //
+    // ENTREES :  				                                                            //
+    //                                                                                      //
+    // SORTIES :                                                                            //
+    //                                                                                      //
+    // MODIFIEES :                                                                          //
+    //                                                                                      //
+    //                                                                                      //
+    // FONCTIONS APPELEES :                                                                 //
+    //             hourtotuple, tide level, tidetime                                        //
+    // ALGO - REFERENCES :                                                                  //
+    //                                                                                      //
+    //----------------- FIN EN TETE --------------------------------------------------------//"""
     choice = str(input("""
-Menu:
-1-Rechercher le niveau de la marée grace à un horaire
-2-Rechercher l'heure à laquelle la marée atteint un certain niveau
-:""")).strip()  # on demande à l'utilisateur de rentrer un des choix
+    Menu:
+    1-Rechercher le niveau de la marée grace à un horaire
+    2-Rechercher l'heure à laquelle la marée atteint un certain niveau
+    :""")).strip()  # on demande à l'utilisateur de rentrer un des choix
     print("")  # juste pour le saut de ligne
 
     if choice == "1":  # si le choix est 1
@@ -53,10 +73,10 @@ Menu:
             print("\nà {}h{} la mer sera à {}m\n\n".format(str(Var[0]).rjust(2, "0"), str(Var[1]).rjust(2, "0"), Solution.__round__(2)))
         except ValueError:
             print("""
-Une des entrées n'est pas correcte:
--pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
--Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
-""")
+            Une des entrées n'est pas correcte:
+            -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
+            -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
+            """)
     elif choice == "2":  # sinon si le choix et 2
         try:
             MinHour = HourToTupples(input("Premiére Heure:"))
@@ -68,11 +88,12 @@ Une des entrées n'est pas correcte:
             print("la mer atteindra {}m à {}h{}".format(Var, str(Solution[0]).rjust(2, "0"), str(Solution[1]).rjust(2, "0")))
         except ValueError:
             print("""
-Une des entrées n'est pas correcte:
--pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
--Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
-""")
-    elif choice == "3":  # sinon si le choix et 3
-        break  # fin de la boucle et donc du programme
+    Une des entrées n'est pas correcte:
+    -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
+    -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
+    """)
     else:  # sinon pour toutes les autres réponses (incompréhension de l'utilisateur)
         print("\nil faut rentrer un nombre en fonction de ce que l'on souhaite réaliser.\n1, 2 ou 3 (pour quitter)\n")
+
+lauch_marre()
+

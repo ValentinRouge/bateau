@@ -1,7 +1,7 @@
 from intersection_2_droites.intersection2droites import *
 from equation_de_droite.droite import *
 from maree.maree import *
-from maree.launcheur_maree import *
+from maree.func_maree import *
 from convertisseur_de_coordonnees.coordonnee import *
 from cascade_resultat.cascade_resultats import *
 
@@ -12,7 +12,7 @@ while True:
 3\Calcul de maree
 0\Quitter
 """)
-    answ = input("Que souhaitez vous faire?\n:")
+    answ = input("Que souhaitez vous faire?:")
     print("\n")
     try:
         answ = int(answ)
