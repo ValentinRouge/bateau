@@ -95,5 +95,4 @@ def lauch_marre():
     else:  # sinon pour toutes les autres réponses (incompréhension de l'utilisateur)
         print("\nil faut rentrer un nombre en fonction de ce que l'on souhaite réaliser.\n1, 2 ou 3 (pour quitter)\n")
 
-lauch_marre()
 
