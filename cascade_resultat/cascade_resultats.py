@@ -1,12 +1,5 @@
-"""
-Created on Tue Sep 15 14:13:50 2020
-
-@author: Théotime
-
-"""
-
-
-"""
+def reajustement(a):
+    """
     // ---------------- DEBUT EN TETE ---------------------------------------------------//
     // NOM :                    reajustement                                             //
     //                                                                                   //
@@ -31,14 +24,14 @@ Created on Tue Sep 15 14:13:50 2020
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE ---------------------------------------------------- //"""
-def reajustement(a):
     if a<0 : 
         a = 360 + a
     elif a > 360 : 
         a = a - 360
     return a
 
-"""
+def CCtoCV(cc,d,a,D,b): 
+    """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
     // NOM :                   CCtoCV                                                    //
     //                                                                                   //
@@ -74,7 +67,6 @@ def reajustement(a):
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE -----------------------------------------------------//"""  
-def CCtoCV(cc,d,a,D,b): 
     if a==1 :
         cm = cc + d
     else : 
@@ -86,7 +78,9 @@ def CCtoCV(cc,d,a,D,b):
     result = reajustement(cv)
     return result
 
-"""
+
+def CVtoCC(cv,d,a,D,b): 
+    """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
     // NOM :                    CVtoCC                                                   //
     //                                                                                   //
@@ -121,7 +115,6 @@ def CCtoCV(cc,d,a,D,b):
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE ---------------------------------------------------- //"""
-def CVtoCC(cv,d,a,D,b): 
     if a==1 :
         cm = cv - d
     else :
@@ -133,7 +126,9 @@ def CVtoCC(cv,d,a,D,b):
     result = reajustement(cc)
     return result
 
-"""
+
+def CVtoRS(cv,a): 
+    """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
     // NOM :                    CVtoRS                                                   //
     //                                                                                   //
@@ -163,13 +158,14 @@ def CVtoCC(cv,d,a,D,b):
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE -----------------------------------------------------//"""
-def CVtoRS(cv,a): 
     rs = a+cv
     result = reajustement(rs)
     return result
 
 
-"""
+
+def RStoCV(a,b) : 
+    """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
     // NOM :                    RStoCV                                                   //
     //                                                                                   //
@@ -199,13 +195,15 @@ def CVtoRS(cv,a):
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE ---------------------------------------------------- 1//"""    
-def RStoCV(a,b) : 
     cv = a-b
     result = reajustement(cv)
     return result
     
 
-"""
+
+
+def choix() : 
+    """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
     // NOM :                    choix                                                //
     //                                                                                      //
@@ -253,8 +251,6 @@ cc = cap_compas()
     // ALGO - REFERENCES :                                                                  //
     //                                                                                      //
     //----------------- FIN EN TETE --------------------------------------------------------//"""
-
-def choix() : 
     print("que voulez vous faire ?")
     a = int(input("1- Cap compas => Cap vrai 2- Cap Vrai => cap compas 3- Route de surface => cap Vrai"))
     if a == 1 : 

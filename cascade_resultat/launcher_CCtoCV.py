@@ -1,13 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov 12 17:23:34 2020
-
-@author: Théotime
-"""
-
-
-
-
 from cascade_resultat import CCtoCV
 
 cc = int(input("donnez la  valuer de cc"))
