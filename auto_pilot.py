@@ -26,19 +26,31 @@ while True:
         try :
             LCmin==0
         except : 
-            LCmin = input("latitude minimale de la carte : ")
-            LCmax = input("latitude maximale de la carte : ")
-            lCmin = input("longitude minimale de la carte : ")
-            lCmax = input("longitude maximale de la carte : ")
+            print("-" * 40, sep="")
+            print("  Carte:")
+            LCmin = input("\t-latitude minimale : ")   # Pour l'émisphére Nord seulement
+            LCmax = input("\t-latitude maximale : ")
+            lCmin = input("\n\t-longitude minimale : ")
+            lCmax = input("\t-longitude maximale : ")
+            print("-" * 40, sep="")
 
+        print("")
         # a rentrer pour se localiser sur la carte (droite + intersection)
-        A1 = input("angle de vision du premier phare : ")
-        L1 = input("latitude du premier phare : ")
-        l1 = input("longitude du premier phare : ")
+        print("-" * 40, sep="")
+        print("  Phare 1:")
+        A1 = input("\t-angle de vision : ")
+        L1 = input("\n\t-latitude : ")
+        l1 = input("\t-longitude : ")
+        print("-" * 40, sep="")
 
-        A2 = input("angle de vision du second phare : ")
-        L2 = input("latitude du second phare : ")
-        l2 = input("longitude du second phare : ")
+        print("")
+        print("-" * 40, sep="")
+        print("  Phare 2:")
+        A2 = input("\t-angle de vision : ")
+        L2 = input("\n\t-latitude : ")
+        l2 = input("\t-longitude : ")
+        print("-" * 40, sep="")
+
 
         X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
         X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
@@ -47,7 +59,7 @@ while True:
         a2, b2, c2 = Droite(X2, Y2, A2)
 
         Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)
-        print("Votre position est :",Xi, Yi)
+        print("\n\nVotre position est :",Xi, Yi, "\n")
 
     elif answ == 2:
         try :
@@ -60,6 +72,8 @@ while True:
     elif answ == 3:
         print("Calcul de maree")
         launch_marre()
+
+print("A bientôt sur le super programme de calcul marin!!")
 
 
 # programme qui nous localise sur une carte : 

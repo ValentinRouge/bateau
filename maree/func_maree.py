@@ -57,7 +57,7 @@ def launch_marre():
     //----------------- FIN EN TETE --------------------------------------------------------//"""
     while True:
         choice = str(input("""
-        Menu:
+        Calcul de aree:
         1-Rechercher le niveau de la marée grace à un horaire
         2-Rechercher l'heure à laquelle la marée atteint un certain niveau
         3-Revenir au menu principal
