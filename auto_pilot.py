@@ -26,7 +26,7 @@ while True:
         try :
             LCmin==0
         except : 
-            LCmin = input("latitude minimale de la carte : ")
+            LCmin = input("latitude minimale de la carte : ")   # Pour l'émisphére Nord seulement
             LCmax = input("latitude maximale de la carte : ")
             lCmin = input("longitude minimale de la carte : ")
             lCmax = input("longitude maximale de la carte : ")
