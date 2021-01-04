@@ -61,7 +61,7 @@ while True:
         print("Calcul de maree")
         launch_marre()
 
-print("A bientôt sur le super programme de calcul marin")
+print("A bientôt sur le super programme de calcul marin!!")
 
 
 # programme qui nous localise sur une carte : 
