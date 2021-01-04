@@ -8,16 +8,16 @@ Created on Thu Nov 12 17:23:34 2020
 
 
 
-from cascade_resultat import CCtoCV (cc,d,a,D,b)
+from cascade_resultat import CCtoCV
 
-H = int(input("donnez la  valuer de cc))
+H = int(input("donnez la  valuer de cc"))
 
-I = int(input("donnez la  valuer de d))
+I = int(input("donnez la  valuer de d"))
             
-J = int(input("donnez la  valuer de a))
+J = int(input("donnez la  valuer de a"))
 
-K = int(input("donnez la  valuer de D)) 
+K = int(input("donnez la  valuer de D")) 
              
-L = int(input("donnez la  valuer de b))              
+L = int(input("donnez la  valuer de b"))              
                             
 print (CCtoCV (cc,d,a,D,b))
