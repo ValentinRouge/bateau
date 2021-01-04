@@ -6,7 +6,7 @@ Created on Thu Nov 12 17:21:46 2020
 """
 
 
-from cascade_resultat import RStoCV
+from cascade_resultat import RS
 
 a = int(input("donnez la  valuer de a"))
 

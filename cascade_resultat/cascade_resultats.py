@@ -6,42 +6,42 @@ Created on Tue Sep 15 14:13:50 2020
 """
 
 
-def cap_compas () : 
-    cc = int (input("Quel est le cap compas (en deg) ? "))
-    return (cc)
+def cap_compas(): 
+    cc = int(input("Quel est le cap compas (en deg) ? "))
+    return cc
 
-def cap_vrai (): 
-    cv = int (input("Quel est le cap vrai (deg) ? "))
-    return (cv)
+def cap_vrai(): 
+    cv = int(input("Quel est le cap vrai (deg) ? "))
+    return cv
 
-def deviation () :
-    d = int ( input("Quel est la déviation ( en deg) ? "))
-    return (d)
+def deviation():
+    d = int(input("Quel est la déviation ( en deg) ? "))
+    return d
    
-def orientation () : 
-    a = int (input ("1 - Est 2 - West "))
-    return (a)
+def orientation(): 
+    a = int(input ("1 - Est 2 - West "))
+    return a
 
-def declinaison () : 
-    D = int (input("Quel est la déclinaison (en deg) ? "))
-    return (D)
+def declinaison(): 
+    D = int(input("Quel est la déclinaison (en deg) ? "))
+    return D
 
-def derive () :
-    der = int (input("Quelle est la valeur de la dérive (en deg)? "))
-    return (der)
+def derive():
+    der = int(input("Quelle est la valeur de la dérive (en deg)? "))
+    return der
 
-def route_surface () : 
-    RS = int(input ("quelles est la valeur de la route de surface (en deg)? "))
-    return (RS)
+def route_surface(): 
+    RS = int(input("quelles est la valeur de la route de surface (en deg)? "))
+    return RS
 
-def affichage_cv (a) : 
-    print ("le cap vrai est ", a," degrès")
+def affichage_cv(a): 
+    print("le cap vrai est ", a," degrès")
 
-def affichage_cc (a) :
-    print ("le cap compas est ", a," degrès")
+def affichage_cc(a):
+    print("le cap compas est ", a," degrès")
     
-def affichage_rs (a) :
-    print ("la route de surface est",a,"degrès")
+def affichage_rs(a):
+    print("la route de surface est",a,"degrès")
 
 """
     // ---------------- DEBUT EN TETE ---------------------------------------------------//
@@ -68,12 +68,12 @@ def affichage_rs (a) :
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE ---------------------------------------------------- //"""
-def reajustement (a) :
+def reajustement(a):
     if a<0 : 
         a = 360 + a
     elif a > 360 : 
         a = a - 360
-    return (a)
+    return a
 
 """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
@@ -111,7 +111,7 @@ def reajustement (a) :
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE -----------------------------------------------------//"""  
-def CCtoCV (cc,d,a,D,b): 
+def CCtoCV(cc,d,a,D,b): 
     if a==1 :
         cm = cc + d
     else : 
@@ -121,7 +121,7 @@ def CCtoCV (cc,d,a,D,b):
     else : 
         cv = cm -D
     result = reajustement(cv)
-    return(result)
+    return result
 
 """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
@@ -158,7 +158,7 @@ def CCtoCV (cc,d,a,D,b):
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE ---------------------------------------------------- //"""
-def CVtoCC (cv,d,a,D,b) : 
+def CVtoCC(cv,d,a,D,b): 
     if a==1 :
         cm = cv - d
     else :
@@ -167,8 +167,8 @@ def CVtoCC (cv,d,a,D,b) :
         cc = cm - D 
     else : 
         cc = cm +D
-    result = reajustement (cc)
-    return (result)
+    result = reajustement(cc)
+    return result
 
 """
  // ---------------- DEBUT EN TETE ------------------------------------------------------//
@@ -200,10 +200,10 @@ def CVtoCC (cv,d,a,D,b) :
     // ALGO - REFERENCES :                                                               //
     //                                                                                   //
     //----------------- FIN EN TETE -----------------------------------------------------//"""
-def CVtoRS(cv,a) : 
+def CVtoRS(cv,a): 
     rs = a+cv
     result = reajustement(rs)
-    return (result)
+    return result
 
 
 """
@@ -239,7 +239,7 @@ def CVtoRS(cv,a) :
 def RStoCV(a,b) : 
     cv = a-b
     result = reajustement(cv)
-    return (result)
+    return result
     
 
 """
@@ -291,14 +291,14 @@ cc = cap_compas()
     //                                                                                      //
     //----------------- FIN EN TETE --------------------------------------------------------//"""
 def choix() : 
-    print ("que voulez vous faire ?")
-    a = int(input ("1- Cap compas => Cap vrai 2- Cap Vrai => cap compas 3- Route de surface => cap Vrai"))
+    print("que voulez vous faire ?")
+    a = int(input("1- Cap compas => Cap vrai 2- Cap Vrai => cap compas 3- Route de surface => cap Vrai"))
     if a == 1 : 
         cc = cap_compas()
         d = deviation()
         a = orientation()
         D = declinaison()
-        b = orientation ()
+        b = orientation()
         cv1 = CCtoCV(cc,d,a,D,b)
         affichage_cv(cv1)
         print ("voulez vous calculer la route de Surface")
@@ -313,14 +313,14 @@ def choix() :
         d = deviation()
         a = orientation()
         D = declinaison()
-        b = orientation ()
+        b = orientation()
         cc = CVtoCC (cv,d,a,D,b)
         affichage_cc(cc)
     else  :
         a = route_surface()
         b= derive()
-        cv2 = RStoCV (a,b)
-        affichage_cv (cv2)
+        cv2 = RStoCV(a,b)
+        affichage_cv(cv2)
         print ("voulez vous calculer le cap compas ?")
         c = int (input ("1-oui 2- non "))
         if c == 1 :
@@ -328,7 +328,7 @@ def choix() :
             d = deviation()
             a = orientation()
             D = declinaison()
-            b = orientation ()
-            cc = CVtoCC (cv,d,a,D,b)
+            b = orientation()
+            cc = CVtoCC(cv,d,a,D,b)
             affichage_cc(cc)
 
