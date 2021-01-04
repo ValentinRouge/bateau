@@ -40,35 +40,57 @@ def calcul_de_pos():
             distance_phare = []
             for phare in list(phare_de_france.keys()):  # on récupère une liste des distances des phare au centre de la carte
                 distance_phare.append(sqrt((abs(phare_de_france[phare][0] - abs(LCmax-LCmin)))*(abs(phare_de_france[phare][0] - abs(LCmax-LCmin))) + (abs(phare_de_france[phare][1] - abs(lCmax-lCmin)))*(abs(phare_de_france[phare][1] - abs(lCmax-lCmin)))))
-            for i in range(2):
+            for i in range(1, 2):
                 while True:
-                    print("\nPhare", i)
-                    print("0-Quitter")
-                    for j in range(8):
-                        phare = list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[j])]
-                        print("{}-{} ({}, {})".format(j+1, phare.ljust(30), str(phare_de_france[phare][0]).ljust(9), str(phare_de_france[phare][1]).ljust(10)))
-                    print("9-rechercher un phare")
-                    print("10-Rentrer à la main les positions des phares")
-                    try:
-                        choice = int(input(":"))
-                        break
-                    except ValueError:  # si on rentre autre chose qu'un nombre
-                        print("il faut rentrer un nombre")
+                    while True:
+                        print("\nPhare", i)
+                        print("0-Quitter")
+                        for j in range(8):
+                            phare = list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[j])]
+                            print("{}-{} ({}, {})".format(j+1, phare.ljust(30), str(phare_de_france[phare][0]).ljust(9), str(phare_de_france[phare][1]).ljust(10)))
+                        print("9-rechercher un phare")
+                        print("10-Rentrer à la main les positions des phares")
+                        try:
+                            choice = int(input(":"))
+                            break
+                        except ValueError:  # si on rentre autre chose qu'un nombre
+                            print("il faut rentrer un nombre")
                     if 0 < choice < 9:  # si compris entre 1 et 9 (si on choisit un des phares proches)
                         pass
                     elif choice == 9:
                         nom = input("entrez un nom de phare : ")
                         liste_recherche = []
                         for phare in list(phare_de_france.keys()):
-                            for letter in len(nom):
+                            for letter in range(len(nom)):
                                 if nom[letter] == phare[letter]:
                                     pass
                                 else:
                                     break
-                                if letter == len(nom):
+                                if letter + 1 == len(nom):
                                     liste_recherche.append(phare)
-                        print(liste_recherche)
-                        input("?")
+                        while True:
+                            print("0-Retour")
+                            for j in range(len(liste_recherche)):
+                                print("{}-{} ({}, {})".format(str(j+1), str(liste_recherche[j]).ljust(30), str(phare_de_france[str(liste_recherche[j])][0]).ljust(9), str(phare_de_france[str(liste_recherche[j])][1]).ljust(10)))
+                            try:
+                                select = int(input(":"))
+                                if select == 0:
+                                    pass
+                                elif 0 < select <= len(liste_recherche):
+                                    if i == 1:
+                                        A1 = int(input("\t-angle de vision (°): "))
+                                        L1 = float(phare_de_france[str(liste_recherche[select-1])][0])
+                                        l1 = float(phare_de_france[str(liste_recherche[select-1])][1])
+                                    else:
+                                        A2 = int(input("\t-angle de vision (°): "))
+                                        L2 = float(phare_de_france[str(liste_recherche[select-1])][0])
+                                        l2 = float(phare_de_france[str(liste_recherche[select-1])][1])
+                                        break
+                                else:
+                                    print("Il faut rentrer un des nombre affiché")
+                            except ValueError:
+                                print("il faut rentrer un nombre")
+                        break
                     elif choice == 0:  # si on choisit 0 cela arréte la boucle
                         break
                     # a rentrer pour se localiser sur la carte (droite + intersection)
@@ -81,14 +103,14 @@ def calcul_de_pos():
                             L1 = float(input("\n\t-latitude : "))
                             l1 = float(input("\t-longitude : "))
                             print("-" * 40, sep="")
-
                         else:
-                        print("-" * 40, sep="")
-                        print("    Phare 2:")
-                        A2 = int(input("\t-angle de vision (°): "))
-                        L2 = float(input("\n\t-latitude : "))
-                        l2 = float(input("\t-longitude : "))
-                        print("-" * 40, sep="")
+                            print("-" * 40, sep="")
+                            print("    Phare 2:")
+                            A2 = int(input("\t-angle de vision (°): "))
+                            L2 = float(input("\n\t-latitude : "))
+                            l2 = float(input("\t-longitude : "))
+                            print("-" * 40, sep="")
+                            break
             if A1 == A2 or A1 == A2+180 or A1+180 == A2:
                 print("\nimpossible de rentrer 2 angles équivalent à 180° prés\n")
             else:
