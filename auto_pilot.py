@@ -62,7 +62,7 @@ while True:
                 while True:
                     print("Phare 1")
                     print("0-Quitter")
-
+                    
                     print("10-Rentrer à la main les positions des phares")
                     try:
                         choice = int(input(":"))
