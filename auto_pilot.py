@@ -33,21 +33,21 @@ while True:
 
         # a rentrer pour se localiser sur la carte (droite + intersection)
         A1 = input("angle de vision du premier phare : ")
-        X1 = input("latitude du premier phare : ")
-        Y1 = input("longitude du premier phare : ")
+        L1 = input("latitude du premier phare : ")
+        l1 = input("longitude du premier phare : ")
 
         A2 = input("angle de vision du second phare : ")
-        X2 = input("latitude du second phare : ")
-        Y2 = input("longitude du second phare : ")
+        L2 = input("latitude du second phare : ")
+        l2 = input("longitude du second phare : ")
 
-        #X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
-        #X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
+        X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
+        X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
 
         a1, b1, c1 = Droite(X1, Y1, A1)
         a2, b2, c2 = Droite(X2, Y2, A2)
 
         Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)
-        print(Xi, Yi)
+        print("Votre position est :",Xi, Yi)
 
     elif answ == 2:
         try :
