@@ -40,7 +40,7 @@ def calcul_de_pos():
             distance_phare = []
             for phare in list(phare_de_france.keys()):  # on récupère une liste des distances des phare au centre de la carte
                 distance_phare.append(sqrt((abs(phare_de_france[phare][0] - abs(LCmax-LCmin)))*(abs(phare_de_france[phare][0] - abs(LCmax-LCmin))) + (abs(phare_de_france[phare][1] - abs(lCmax-lCmin)))*(abs(phare_de_france[phare][1] - abs(lCmax-lCmin)))))
-            for i in range(1, 2):
+            for i in range(1, 3):
                 while True:
                     while True:
                         print("\nPhare", i)
@@ -56,7 +56,15 @@ def calcul_de_pos():
                         except ValueError:  # si on rentre autre chose qu'un nombre
                             print("il faut rentrer un nombre")
                     if 0 < choice < 9:  # si compris entre 1 et 9 (si on choisit un des phares proches)
-                        pass
+                        if i == 1:
+                            A1 = int(input("\t-angle de vision (°): "))
+                            L1 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][0])
+                            l1 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][1])
+                        else:
+                            A2 = int(input("\t-angle de vision (°): "))
+                            L2 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][0])
+                            l2 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][1])
+                        break
                     elif choice == 9:
                         nom = input("entrez un nom de phare : ")
                         liste_recherche = []
@@ -85,7 +93,7 @@ def calcul_de_pos():
                                         A2 = int(input("\t-angle de vision (°): "))
                                         L2 = float(phare_de_france[str(liste_recherche[select-1])][0])
                                         l2 = float(phare_de_france[str(liste_recherche[select-1])][1])
-                                        break
+                                    break
                                 else:
                                     print("Il faut rentrer un des nombre affiché")
                             except ValueError:
@@ -103,6 +111,7 @@ def calcul_de_pos():
                             L1 = float(input("\n\t-latitude : "))
                             l1 = float(input("\t-longitude : "))
                             print("-" * 40, sep="")
+                            break
                         else:
                             print("-" * 40, sep="")
                             print("    Phare 2:")
@@ -111,7 +120,9 @@ def calcul_de_pos():
                             l2 = float(input("\t-longitude : "))
                             print("-" * 40, sep="")
                             break
-            if A1 == A2 or A1 == A2+180 or A1+180 == A2:
+            if choice == 0:
+                break
+            elif A1 == A2 or A1 == A2+180 or A1+180 == A2:
                 print("\nimpossible de rentrer 2 angles équivalent à 180° prés\n")
             else:
                 break
@@ -126,14 +137,17 @@ et les angles de vision sous la forme: ddd (entre 0 et 360)
             lCmin = 0
             lCmax = 0
 
-    X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
-    X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
+    if choice == 0:
+        pass
+    else:
+        X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
+        X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
 
-    a1, b1, c1 = Droite(X1, Y1, A1)
-    a2, b2, c2 = Droite(X2, Y2, A2)
+        a1, b1, c1 = Droite(X1, Y1, A1)
+        a2, b2, c2 = Droite(X2, Y2, A2)
 
-    Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)
-    print("\n\nVotre position est :",Xi, Yi, "\n")
+        Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)
+        print("\n\nVotre position est :",Xi, Yi, "\n")
 
 
 #donnée
