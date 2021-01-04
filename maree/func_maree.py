@@ -94,8 +94,8 @@ def launch_marre():
         -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
         -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
         """)
-        elif choix==3:
-            break
+        elif choix == "3":  # sinon si le choix est 3
+            break   # on arrete la fonction
         else:  # sinon pour toutes les autres réponses (incompréhension de l'utilisateur)
             print("\nil faut rentrer un nombre en fonction de ce que l'on souhaite réaliser.\n1, 2 ou 3 (pour quitter)\n")
 
