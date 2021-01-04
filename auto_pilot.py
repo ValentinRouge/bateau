@@ -61,7 +61,7 @@ while True:
                 #print(sorted(distance_phare))
                 print("Phare 1")
                 choice = input(":")
-                if 0 < choic < 10:
+                if 0 < choice < 10:
                     pass
                 elif choice == 0:
                     break
@@ -69,17 +69,17 @@ while True:
                 else:
                     print("-" * 40, sep="")
                     print("    Phare 1:")
-                    A1 = input("\t-angle de vision (°): ")
-                    L1 = input("\n\t-latitude : ")
-                    l1 = input("\t-longitude : ")
+                    A1 = int(input("\t-angle de vision (°): "))
+                    L1 = float(input("\n\t-latitude : "))
+                    l1 = float(input("\t-longitude : "))
                     print("-" * 40, sep="")
 
                     print("")
                     print("-" * 40, sep="")
                     print("    Phare 2:")
-                    A2 = input("\t-angle de vision (°): ")
-                    L2 = input("\n\t-latitude : ")
-                    l2 = input("\t-longitude : ")
+                    A2 = int(input("\t-angle de vision (°): "))
+                    L2 = float(input("\n\t-latitude : "))
+                    l2 = float(input("\t-longitude : "))
                     print("-" * 40, sep="")
                     if A1 == A2 or A1 == A2+180 or A1+180 == A2:
                         print("\nimpossible de rentrer 2 angles équivalent à 180° prés\n")
