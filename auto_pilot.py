@@ -9,6 +9,9 @@ from math import sqrt
 
 
 def calcul_de_pos():
+    """
+    Permet de lancer le calcul de position tout en proposant d'utiliser des phares présents dans le fichier 'phare_de_france\phare_de_France_dict.json'
+    """
     while True:
         try:
             # a entrer a partir du moment où il y a des données en lat / long qui sont rentrée
