@@ -12,6 +12,10 @@ def calcul_de_pos():
     """
     Permet de lancer le calcul de position tout en proposant d'utiliser des phares présents dans le fichier 'phare_de_france\phare_de_France_dict.json'
     """
+    #donnée
+    with open('phare_de_france\phare_de_France_dict.json') as json_data:  # on charge la liste des phare de france
+        phare_de_france = load(json_data)
+
     while True:
         try:
             # a entrer a partir du moment où il y a des données en lat / long qui sont rentrée
@@ -153,9 +157,6 @@ et les angles de vision sous la forme: ddd (entre 0 et 360)
         print("\n\nVotre position est :",Xi, Yi, "\n")
 
 
-#donnée
-with open('phare_de_france\phare_de_France_dict.json') as json_data:  # on charge la liste des phare de france
-    phare_de_france = load(json_data)
 
 #début du menu principal
 while True:
