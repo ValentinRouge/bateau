@@ -253,6 +253,7 @@ cc = cap_compas()
     // ALGO - REFERENCES :                                                                  //
     //                                                                                      //
     //----------------- FIN EN TETE --------------------------------------------------------//"""
+
 def choix() : 
     print("que voulez vous faire ?")
     a = int(input("1- Cap compas => Cap vrai 2- Cap Vrai => cap compas 3- Route de surface => cap Vrai"))
@@ -275,7 +276,7 @@ def choix() :
         a = int(input ("1 - Est 2 - West "))
         D = int(input("Quel est la déclinaison (en deg) ? "))
         b = int(input ("1 - Est 2 - West "))
-        print("le cap compas est", cc = CVtoCC (cv,d,a,D,b),"degrès")
+        print("le cap compas est", CVtoCC (cv,d,a,D,b), "degrès")
     else  :
         a = int(input("quelles est la valeur de la route de surface (en deg)? "))
         b= int(input("Quelle est la valeur de la dérive (en deg)? "))
