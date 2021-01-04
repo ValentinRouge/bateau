@@ -79,7 +79,7 @@ def launch_marre():
                 -pour les heure il faut rentrer l'heure sous la forme hh:mm   ex: "11:57"
                 -Pour les niveau d'eau il faut rentrer un nombre avec un point pour les décimales   ex: "3.28"
                 """)
-        elif choice == "2":  # sinon si le choix et 2
+        elif choice == "2":  # sinon si le choix est 2
             try:
                 MinHour = HourToTupples(input("Premiére Heure:  "))
                 MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
