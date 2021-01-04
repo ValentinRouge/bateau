@@ -6,10 +6,10 @@ Created on Thu Nov 12 17:18:13 2020
 """
 
 
-from cascade_resultat import CVtoRS (cv,a)
+from cascade_resultat import CVtoRS
 
-H = int(input("donnez la  valuer de cv))
+H = int(input("donnez la  valuer de cv"))
 
-H = int(input("donnez la  valuer de a))
+H = int(input("donnez la  valuer de a"))
                             
 print (CVtoRS (cv,a))
