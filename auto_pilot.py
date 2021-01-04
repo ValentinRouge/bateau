@@ -106,13 +106,7 @@ et les angles de vision sous la forme: ddd (entre 0 et 360)
         print("\n\nVotre position est :",Xi, Yi, "\n")
 
     elif answ == 2:
-        try :
-            LCmin==0
-        except : 
-            LCmin = input("latitude minimale de la carte : ")
-            LCmax = input("latitude maximale de la carte : ")
-            lCmin = input("longitude minimale de la carte : ")
-            lCmax = input("longitude maximale de la carte : ")
+        choix()
     elif answ == 3:
         print("Calcul de maree")
         launch_marre()
