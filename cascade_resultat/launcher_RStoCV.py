@@ -1,4 +1,4 @@
-from cascade_resultat import RStoCV
+from cascade_resultats import RStoCV
 
 
 a = int(input("donnez la  valuer de la route de surface : "))

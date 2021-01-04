@@ -1,4 +1,4 @@
-from cascade_resultat import CVtoRS
+from cascade_resultats import CVtoRS
 
 
 cv = int(input("donnez la  valuer du cap vrai : "))

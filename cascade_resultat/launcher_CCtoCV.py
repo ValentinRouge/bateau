@@ -1,4 +1,4 @@
-from cascade_resultat import CCtoCV
+from cascade_resultats import CCtoCV
 
 
 cc = int(input("donnez la  valuer du cap compas : "))
