@@ -27,7 +27,7 @@ while True:
             LCmin==0
         except : 
             print("-" * 40, sep="")
-            print("  Carte:")
+            print("    Carte:")
             LCmin = input("\t-latitude minimale : ")   # Pour l'émisphére Nord seulement
             LCmax = input("\t-latitude maximale : ")
             lCmin = input("\n\t-longitude minimale : ")
@@ -37,16 +37,16 @@ while True:
         print("")
         # a rentrer pour se localiser sur la carte (droite + intersection)
         print("-" * 40, sep="")
-        print("  Phare 1:")
-        A1 = input("\t-angle de vision : ")
+        print("    Phare 1:")
+        A1 = input("\t-angle de vision (°): ")
         L1 = input("\n\t-latitude : ")
         l1 = input("\t-longitude : ")
         print("-" * 40, sep="")
 
         print("")
         print("-" * 40, sep="")
-        print("  Phare 2:")
-        A2 = input("\t-angle de vision : ")
+        print("    Phare 2:")
+        A2 = input("\t-angle de vision (°): ")
         L2 = input("\n\t-latitude : ")
         l2 = input("\t-longitude : ")
         print("-" * 40, sep="")
