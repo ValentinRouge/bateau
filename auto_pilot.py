@@ -59,8 +59,13 @@ while True:
                 for phare in list(phare_de_france.keys()):
                     distance_phare.append(sqrt((abs(phare_de_france[phare][0] - abs(LCmax-LCmin)))*(abs(phare_de_france[phare][0] - abs(LCmax-LCmin))) + (abs(phare_de_france[phare][1] - abs(lCmax-lCmin)))*(abs(phare_de_france[phare][1] - abs(lCmax-lCmin)))))
                 #print(sorted(distance_phare))
-                print("Phare 1")
-                choice = input(":")
+                while True:
+                    print("Phare 1")
+                    try:
+                        choice = int(input(":"))
+                        break
+                    except ValueError:
+                        print("il faut rentrer un nombre")
                 if 0 < choice < 10:
                     pass
                 elif choice == 0:
