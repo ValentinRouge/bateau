@@ -64,11 +64,11 @@ def launch_marre():
 
     if choice == "1":  # si le choix est 1
         try:
-            MinHour = HourToTupples(input("Premiére Heure:"))
-            MinLevel = float(input("Niveau correspondant à la premiére heure:"))
-            MaxHour = HourToTupples(input("Deuxième heure:"))
-            MaxLevel = float(input("Niveau correspondant à la deuxième heure:"))
-            Var = HourToTupples(input("Heure désirée:"))
+            MinHour = HourToTupples(input("Premiére Heure:  "))
+            MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
+            MaxHour = HourToTupples(input("Deuxième heure:  "))
+            MaxLevel = float(input("Niveau correspondant à la deuxième heure:  "))
+            Var = HourToTupples(input("Heure désirée:   "))
             Solution = maree.TideLevel(MinHour, MaxHour, MinLevel, MaxLevel, Var)
             print("\nà {}h{} la mer sera à {}m\n\n".format(str(Var[0]).rjust(2, "0"), str(Var[1]).rjust(2, "0"), Solution.__round__(2)))
         except ValueError:
@@ -79,11 +79,11 @@ def launch_marre():
             """)
     elif choice == "2":  # sinon si le choix et 2
         try:
-            MinHour = HourToTupples(input("Premiére Heure:"))
-            MinLevel = float(input("Niveau correspondant à la premiére heure:"))
-            MaxHour = HourToTupples(input("Deuxième heure:"))
-            MaxLevel = float(input("Niveau correspondant à la deuxième heure:"))
-            Var = float(input("Hauteur désirée:"))
+            MinHour = HourToTupples(input("Premiére Heure:  "))
+            MinLevel = float(input("Niveau correspondant à la premiére heure:  "))
+            MaxHour = HourToTupples(input("Deuxième heure:  "))
+            MaxLevel = float(input("Niveau correspondant à la deuxième heure:  "))
+            Var = float(input("Niveau d'on on souhaite connaître l'heure: "))
             Solution = maree.TideTime(MinHour, MaxHour, MinLevel, MaxLevel, Var)
             print("la mer atteindra {}m à {}h{}".format(Var, str(Solution[0]).rjust(2, "0"), str(Solution[1]).rjust(2, "0")))
         except ValueError:
