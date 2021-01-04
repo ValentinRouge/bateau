@@ -31,17 +31,17 @@ while True:
             try:
                 # a entrer a partir du moment où il y a des données en lat / long qui sont rentrée
                 try :
-                    if LCmin!=300:
+                    if LCmin!=300:  # On essaie de voir si on a déja les dimension de la carte
                         pass
-                    else:
+                    else:  # si on a causé une erreur d'input en ayant pas les dimensions de la carte
                         print("-" * 40, sep="")
                         print("    Carte:")
-                        LCmin = input("\t-latitude minimale : ")   # Pour l'émisphére Nord seulement et sans prendre en compte le passage de l'antiméridien
+                        LCmin = input("\t-latitude minimale : ")
                         LCmax = input("\t-latitude maximale : ")
                         lCmin = input("\n\t-longitude minimale : ")
                         lCmax = input("\t-longitude maximale : ")
                     print("-" * 40, sep="")
-                except NameError: 
+                except NameError:  # si on a pas les dimensions de la carte
                     print("-" * 40, sep="")
                     print("    Carte:")
                     LCmin = input("\t-latitude minimale : ")   # Pour l'émisphére Nord seulement et sans prendre en compte le passage de l'antiméridien
@@ -49,7 +49,7 @@ while True:
                     lCmin = input("\n\t-longitude minimale : ")
                     lCmax = input("\t-longitude maximale : ")
                     print("-" * 40, sep="")
-                LCmin = float(LCmin)
+                LCmin = float(LCmin)  # on vérifie le type des valeurs, sinon cela cause une value error récup plus bas
                 LCmax = float(LCmax)
                 lCmin = float(lCmin)
                 lCmax = float(lCmax)
@@ -61,14 +61,17 @@ while True:
                 #print(sorted(distance_phare))
                 while True:
                     print("Phare 1")
+                    print("0-Quitter")
+
+                    print("10-Rentrer à la main les positions des phares")
                     try:
                         choice = int(input(":"))
                         break
-                    except ValueError:
+                    except ValueError:  # si on rentre autre chose qu'un nombre
                         print("il faut rentrer un nombre")
-                if 0 < choice < 10:
+                if 0 < choice < 10:  # si compris entre 1 et 9 (si on choisit un des phares proches)
                     pass
-                elif choice == 0:
+                elif choice == 0:  # si on choisit 0 cela arréte la boucle
                     break
                 # a rentrer pour se localiser sur la carte (droite + intersection)
                 else:
@@ -91,7 +94,7 @@ while True:
                     else:
                         break
 
-            except ValueError:
+            except ValueError:  # si on a pas rentrer les bons type pour une ou plusieurs données
                 print("""
 Il faut rentrer les latitudes/longitude sous le format: hh.mmss,
 et les angles de vision sous la forme: ddd (entre 0 et 360)
