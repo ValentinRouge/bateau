@@ -32,7 +32,7 @@ def HourToTupples(Hour):
     h, m = Hour.split(":")
     return int(h), int(m)
 
-def lauch_marre():
+def launch_marre():
     """
     // ---------------- DEBUT EN TETE ------------------------------------------------------//
     // NOM :                    HourToTupples                                               //
@@ -69,7 +69,7 @@ def lauch_marre():
             MaxHour = HourToTupples(input("Deuxième heure:"))
             MaxLevel = float(input("Niveau correspondant à la deuxième heure:"))
             Var = HourToTupples(input("Heure désirée:"))
-            Solution = TideLevel(MinHour, MaxHour, MinLevel, MaxLevel, Var)
+            Solution = maree.TideLevel(MinHour, MaxHour, MinLevel, MaxLevel, Var)
             print("\nà {}h{} la mer sera à {}m\n\n".format(str(Var[0]).rjust(2, "0"), str(Var[1]).rjust(2, "0"), Solution.__round__(2)))
         except ValueError:
             print("""
@@ -84,7 +84,7 @@ def lauch_marre():
             MaxHour = HourToTupples(input("Deuxième heure:"))
             MaxLevel = float(input("Niveau correspondant à la deuxième heure:"))
             Var = float(input("Hauteur désirée:"))
-            Solution = TideTime(MinHour, MaxHour, MinLevel, MaxLevel, Var)
+            Solution = maree.TideTime(MinHour, MaxHour, MinLevel, MaxLevel, Var)
             print("la mer atteindra {}m à {}h{}".format(Var, str(Solution[0]).rjust(2, "0"), str(Solution[1]).rjust(2, "0")))
         except ValueError:
             print("""

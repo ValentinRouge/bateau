@@ -59,7 +59,7 @@ while True:
             lCmax = input("longitude maximale de la carte : ")
     elif answ == 3:
         print("Calcul de maree")
-        lauch_marre()
+        launch_marre()
 
 
 # programme qui nous localise sur une carte : 
