@@ -64,40 +64,40 @@ def calcul_de_pos():
                             print("il faut rentrer un nombre")
                     if 0 < choice < 9:  # si compris entre 1 et 9 (si on choisit un des phares proches)
                         if i == 1:
-                            A1 = int(input("\t-angle de vision (°): "))
+                            A1 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 1
                             L1 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][0])
                             l1 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][1])
                         else:
-                            A2 = int(input("\t-angle de vision (°): "))
+                            A2 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 2
                             L2 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][0])
                             l2 = float(phare_de_france[list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[choice-1])]][1])
                         break
-                    elif choice == 9:
+                    elif choice == 9:  # si on veut rechercher un phare par son nom
                         nom = input("entrez un nom de phare : ")
                         liste_recherche = []
                         for phare in list(phare_de_france.keys()):
                             for letter in range(len(nom)):
-                                if nom[letter] == phare[letter]:
+                                if nom[letter] == phare[letter]:  # on compare ce qu'on a entré avec le débuty du nom des phares
                                     pass
                                 else:
                                     break
-                                if letter + 1 == len(nom):
+                                if letter + 1 == len(nom):  # si ils sont identiques pour toutes les lettres on l'ajoute à la liste
                                     liste_recherche.append(phare)
                         while True:
                             print("0-Retour")
-                            for j in range(len(liste_recherche)):
+                            for j in range(len(liste_recherche)):  # on affiche la liste des phares qui commence par ce qu'on a rentré
                                 print("{}-{} ({}, {})".format(str(j+1), str(liste_recherche[j]).ljust(30), str(phare_de_france[str(liste_recherche[j])][0]).ljust(9), str(phare_de_france[str(liste_recherche[j])][1]).ljust(10)))
                             try:
-                                select = int(input(":"))
+                                select = int(input(":"))  # on séléctionne un phare en particulier
                                 if select == 0:
-                                    pass
+                                    break
                                 elif 0 < select <= len(liste_recherche):
                                     if i == 1:
-                                        A1 = int(input("\t-angle de vision (°): "))
+                                        A1 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 1
                                         L1 = float(phare_de_france[str(liste_recherche[select-1])][0])
                                         l1 = float(phare_de_france[str(liste_recherche[select-1])][1])
                                     else:
-                                        A2 = int(input("\t-angle de vision (°): "))
+                                        A2 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 2
                                         L2 = float(phare_de_france[str(liste_recherche[select-1])][0])
                                         l2 = float(phare_de_france[str(liste_recherche[select-1])][1])
                                     break
@@ -105,31 +105,32 @@ def calcul_de_pos():
                                     print("Il faut rentrer un des nombre affiché")
                             except ValueError:
                                 print("il faut rentrer un nombre")
-                        break
+                        if selsect != 0:
+                            break
                     elif choice == 0:  # si on choisit 0 cela arréte la boucle
                         break
                     # a rentrer pour se localiser sur la carte (droite + intersection)
                     else:
                         print("")
                         if i == 1:
-                            print("-" * 40, sep="")
-                            print("    Phare 1:")
-                            A1 = int(input("\t-angle de vision (°): "))
-                            L1 = float(input("\n\t-latitude : "))
-                            l1 = float(input("\t-longitude : "))
-                            print("-" * 40, sep="")
+                            print("-" * 40, sep="")  # affichage
+                            print("    Phare 1:")  # affichage
+                            A1 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 1
+                            L1 = float(input("\n\t-latitude : "))  # latitude
+                            l1 = float(input("\t-longitude : "))  # longitude
+                            print("-" * 40, sep="")  # affichage
                             break
                         else:
                             print("-" * 40, sep="")
                             print("    Phare 2:")
-                            A2 = int(input("\t-angle de vision (°): "))
+                            A2 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 2
                             L2 = float(input("\n\t-latitude : "))
                             l2 = float(input("\t-longitude : "))
                             print("-" * 40, sep="")
                             break
-            if choice == 0:
+            if choice == 0:  # pour revenir au menu principal
                 break
-            elif A1 == A2 or A1 == A2+180 or A1+180 == A2:
+            elif A1 == A2 or A1 == A2+180 or A1+180 == A2:  # si les droite sont paralélles
                 print("\nimpossible de rentrer 2 angles équivalent à 180° prés\n")
             else:
                 break
@@ -144,17 +145,17 @@ et les angles de vision sous la forme: ddd (entre 0 et 360)
             lCmin = 0
             lCmax = 0
 
-    if choice == 0:
+    if choice == 0:  # pour revenir au menu principal
         pass
     else:
-        X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)
+        X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)  # conversion des données
         X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
 
-        a1, b1, c1 = Droite(X1, Y1, A1)
+        a1, b1, c1 = Droite(X1, Y1, A1)  # calcul des droites
         a2, b2, c2 = Droite(X2, Y2, A2)
 
-        Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)
-        print("\n\nVotre position est :",Xi, Yi, "\n")
+        Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)  # intersection des droites
+        print("\n\nVotre position est :",Xi, Yi, "\n")  # affichage final
 
 
 
