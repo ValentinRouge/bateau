@@ -6,6 +6,7 @@ from convertisseur_de_coordonnees.coordonnee import *
 from cascade_resultat.cascade_resultats import *
 from json import *
 from math import sqrt
+from phare_de_france.new_phare import *
 
 
 def calcul_de_pos():
@@ -56,7 +57,7 @@ def calcul_de_pos():
                             phare = list(phare_de_france.keys())[distance_phare.index(sorted(distance_phare)[j])]
                             print("{}-{} ({}, {})".format(j+1, phare.ljust(30), str(phare_de_france[phare][0]).ljust(9), str(phare_de_france[phare][1]).ljust(10)))
                         print("9-rechercher un phare")
-                        print("10-Rentrer à la main les positions des phares")
+                        print("10-Rentrer à la main les positions du phare")
                         try:
                             choice = int(input(":"))
                             break
@@ -105,7 +106,7 @@ def calcul_de_pos():
                                     print("Il faut rentrer un des nombre affiché")
                             except ValueError:
                                 print("il faut rentrer un nombre")
-                        if selsect != 0:
+                        if select != 0:
                             break
                     elif choice == 0:  # si on choisit 0 cela arréte la boucle
                         break
@@ -116,17 +117,22 @@ def calcul_de_pos():
                             print("-" * 40, sep="")  # affichage
                             print("    Phare 1:")  # affichage
                             A1 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 1
-                            L1 = float(input("\n\t-latitude : "))  # latitude
+                            print("\n\tVeuillez entrer les cordonnées au format XX,XXXXXX")
+                            L1 = float(input("\t-latitude : "))  # latitude
                             l1 = float(input("\t-longitude : "))  # longitude
                             print("-" * 40, sep="")  # affichage
+                            phare_de_france = new_phare(L1,l1)
                             break
                         else:
                             print("-" * 40, sep="")
                             print("    Phare 2:")
                             A2 = int(input("\t-angle de vision (°): "))  # on choisi l'angle du phare 2
-                            L2 = float(input("\n\t-latitude : "))
+                            print("\n\tVeuillez entrer les cordonnées au format XX,XXXXXX")
+                            L2 = float(input("\t-latitude : "))
                             l2 = float(input("\t-longitude : "))
                             print("-" * 40, sep="")
+                            phare_de_france = new_phare(L2,l2)
+
                             break
             if choice == 0:  # pour revenir au menu principal
                 break
