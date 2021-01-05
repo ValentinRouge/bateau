@@ -1,7 +1,7 @@
 from math import *
 
 
-def convertDepuisLatLong(latMaxCarte, latMinCarte, longMaxCarte, longMinCarte, lat, long):
+def convertDepuisLatLong(latMaxCarte, latMinCarte, longMaxCarte, longMinCarte):
     """
     // ---------------- DEBUT EN TETE --------------------------------------//
     // NOM :                    convertDepuisLatLong                        //
@@ -41,15 +41,32 @@ def convertDepuisLatLong(latMaxCarte, latMinCarte, longMaxCarte, longMinCarte, l
     Xcarte = Xmax - Xmin
     Ycarte = Ymax - Ymin
 
-    Xpos,Ypos = convertLatLongXY(lat,long)
 
     Xcoef = 100/Xcarte
     Ycoef = 100/Ycarte
 
+    return Xcoef, Ycoef
+
+def LltoXY(lat, long, Xcoef, Ycoef, latMinCarte,longMinCarte):
+    Xmin,Ymin = convertLatLongXY(latMinCarte, longMinCarte)
+    Xpos,Ypos = convertLatLongXY(lat,long)
+
     Xresultat = (Xpos-Xmin) * Xcoef
     Yresultat = (Ypos-Ymin) * Ycoef
 
-    return Yresultat, Xresultat
+    return Yresultat,Xresultat
+
+def XYtoLl(X, Y, Xcoef, Ycoef, latMinCarte, longMinCarte):
+    Xmin,Ymin = convertLatLongXY(latMinCarte, longMinCarte)
+
+    Ypos = Y/Xcoef+Ymin
+    Xpos = X/Ycoef+Xmin
+
+    R=6371
+    Lat = float(Lat)
+    Long = float(Long)
+
+    return Ypos/R, Xpos/(R * cos(radians(Ypos/R))
 
 
 def convertLatLongXY(Lat, Long):

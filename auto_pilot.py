@@ -154,15 +154,15 @@ et les angles de vision sous la forme: ddd (entre 0 et 360)
     if choice == 0:  # pour revenir au menu principal
         pass
     else:
-        X1,Y1 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L1, l1)  # conversion des données
-        X2,Y2 = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin, L2, l2)
+        Xcoef,Ycoef = convertDepuisLatLong(LCmax, LCmin, lCmax, lCmin)
+        X1,Y1 = LltoXY(L1, l1, Xcoef,Ycoef,LCmin,lCmin)  # conversion des données
+        X2,Y2 = LltoXY(L2, l2, Xcoef,Ycoef,LCmin,lCmin)
 
         a1, b1, c1 = Droite(X1, Y1, A1)  # calcul des droites
         a2, b2, c2 = Droite(X2, Y2, A2)
 
         Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)  # intersection des droites
-        LP = Yi*LCmax/100
-        lP=Xi*lCmax/100
+        LP,lp = XYtoLl(Xi,Yi,Xcoef,Ycoef,LCmin,lCmin)
         print("\n\nVotre position est :",LP, lP, "\n")  # affichage final
 
 
