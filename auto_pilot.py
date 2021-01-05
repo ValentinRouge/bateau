@@ -161,7 +161,9 @@ et les angles de vision sous la forme: ddd (entre 0 et 360)
         a2, b2, c2 = Droite(X2, Y2, A2)
 
         Xi, Yi = intersection(a1, b1, c1, a2, b2, c2)  # intersection des droites
-        print("\n\nVotre position est :",Xi, Yi, "\n")  # affichage final
+        LP = Yi*LCmax/100
+        lP=Xi*lCmax/100
+        print("\n\nVotre position est :",LP, lP, "\n")  # affichage final
 
 
 
