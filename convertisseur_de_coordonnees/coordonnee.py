@@ -66,7 +66,7 @@ def XYtoLl(X, Y, Xcoef, Ycoef, latMinCarte, longMinCarte):
     Lat = float(Lat)
     Long = float(Long)
 
-    return Ypos/R, Xpos/(R * cos(radians(Ypos/R))
+    return Ypos/R, Xpos/(R * cos(radians(Ypos/R)))
 
 
 def convertLatLongXY(Lat, Long):
